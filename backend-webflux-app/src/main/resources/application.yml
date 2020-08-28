@@ -1,0 +1,7 @@
+server:
+  port: 8091
+
+backend:
+  retry-number: 2
+  request-timeout-seconds: 100
+  service-url: "http://localhost:${server.port}/hello-webflux"
