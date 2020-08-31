@@ -24,6 +24,7 @@ public class BlockingAppConfig {
            .build();
     }
 
+    // Pool of threads to call blocking service simultaneously on startup
     @Bean
     public BlockingHttpClientService blockingHttpService(
             RestTemplate restTemplate,
@@ -35,6 +36,7 @@ public class BlockingAppConfig {
         );
     }
 
+    // It calls /answer-blocking on startup
     @Bean
     public HttpServiceCaller httpServiceCaller(
             ExecutorService executorService,

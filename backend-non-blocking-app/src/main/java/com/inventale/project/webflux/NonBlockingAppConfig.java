@@ -31,6 +31,7 @@ public class NonBlockingAppConfig {
         );
     }
 
+    // It calls /answer-non-blocking on startup
     @Bean
     public HttpServiceCaller httpServiceCaller(
             ExecutorService executorService,
@@ -48,6 +49,7 @@ public class NonBlockingAppConfig {
         );
     }
 
+    // Pool of threads to call non-blocking service simultaneously on startup
     @Bean
     public ExecutorService callerExecutorService(
             @Value(value = "${backend.number-of-calls-on-startup}") int numberOfCallsOnStartup
