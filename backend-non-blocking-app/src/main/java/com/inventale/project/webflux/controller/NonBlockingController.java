@@ -26,6 +26,7 @@ public class NonBlockingController {
     @RequestMapping(value = "/hello-non-blocking", method = { RequestMethod.GET })
     public Mono<HelloWorldResult> helloNonBlocking() {
         log.info("NonBlockingController, the thread is {}", Thread.currentThread().getName());
-        return nonBlockingHttpClientService.getHelloWorld();
+        nonBlockingHttpClientService.getHelloWorld();
+        return nonBlockingHttpClientService.getHelloWorld().log();
     }
 }

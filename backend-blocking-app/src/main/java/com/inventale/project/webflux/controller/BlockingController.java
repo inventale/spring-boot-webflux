@@ -25,6 +25,8 @@ public class BlockingController {
     @RequestMapping(value = "/hello-blocking", method = { RequestMethod.GET })
     public HelloWorldResult helloBlocking() {
         log.info("BlockingController, the thread is {}", Thread.currentThread().getName());
-        return blockingHttpClientService.getHelloWorld();
+        HelloWorldResult result = blockingHttpClientService.getHelloWorld();
+        log.info("BlockingController, result is {}", result);
+        return result;
     }
 }
