@@ -1,6 +1,6 @@
 package com.inventale.project.webflux.services;
 
-import com.inventale.project.model.HelloWorldResult;
+import com.inventale.project.model.Result;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -21,7 +21,7 @@ public class BlockingHttpClientService {
         this.servicePath = servicePath;
     }
 
-    public HelloWorldResult getHelloWorld() {
+    public Result getAnswer() {
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
         HttpEntity<String> entity = new HttpEntity<>(headers);
@@ -30,7 +30,7 @@ public class BlockingHttpClientService {
                 servicePath,
                 HttpMethod.GET,
                 entity,
-                HelloWorldResult.class
+                Result.class
         ).getBody();
     }
 }

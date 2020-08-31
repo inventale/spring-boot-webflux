@@ -1,6 +1,6 @@
 package com.inventale.project.webflux.controller;
 
-import com.inventale.project.model.HelloWorldResult;
+import com.inventale.project.model.Result;
 import com.inventale.project.webflux.services.NonBlockingHttpClientService;
 import io.micrometer.core.annotation.Timed;
 import lombok.extern.slf4j.Slf4j;
@@ -23,10 +23,10 @@ public class NonBlockingController {
         this.nonBlockingHttpClientService = nonBlockingHttpClientService;
     }
 
-    @RequestMapping(value = "/hello-non-blocking", method = { RequestMethod.GET })
-    public Mono<HelloWorldResult> helloNonBlocking() {
+    @RequestMapping(value = "/answer-non-blocking", method = { RequestMethod.GET })
+    public Mono<Result> answerNonBlocking() {
         log.info("NonBlockingController, the thread is {}", Thread.currentThread().getName());
-        nonBlockingHttpClientService.getHelloWorld();
-        return nonBlockingHttpClientService.getHelloWorld().log();
+        nonBlockingHttpClientService.getAnswer();
+        return nonBlockingHttpClientService.getAnswer().log();
     }
 }

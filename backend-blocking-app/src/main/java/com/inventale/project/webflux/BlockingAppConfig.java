@@ -25,7 +25,7 @@ public class BlockingAppConfig {
     }
 
     @Bean
-    public BlockingHttpClientService helloWorldHttpService(
+    public BlockingHttpClientService blockingHttpService(
             RestTemplate restTemplate,
             @Value(value = "${backend.service-url}") String serviceUrl
     ) {

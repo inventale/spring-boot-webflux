@@ -1,6 +1,6 @@
 package com.inventale.project.webflux.services;
 
-import com.inventale.project.model.HelloWorldResult;
+import com.inventale.project.model.Result;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import reactor.util.retry.Retry;
@@ -25,12 +25,12 @@ public class NonBlockingHttpClientService {
         this.servicePath = servicePath;
     }
 
-    public Mono<HelloWorldResult> getHelloWorld() {
+    public Mono<Result> getAnswer() {
         return webClient
                 .get()
                 .uri(servicePath)
                 .retrieve()
-                .bodyToMono(HelloWorldResult.class)
+                .bodyToMono(Result.class)
                 .retryWhen(Retry.fixedDelay(retryCount, Duration.ofSeconds(requestTimeoutSeconds)));
     }
 }

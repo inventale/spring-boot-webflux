@@ -1,15 +1,8 @@
 package com.inventale.project.caller;
 
-import com.inventale.project.model.HelloWorldResult;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.web.client.RestTemplate;
+import com.inventale.project.model.Result;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.util.retry.Retry;
 
-import java.time.Duration;
-import java.util.Collections;
 import java.util.concurrent.ExecutorService;
 
 // call specified service several times in paralle
@@ -37,7 +30,7 @@ public class HttpServiceCaller {
                             .get()
                             .uri(servicePath)
                             .retrieve()
-                            .bodyToMono(HelloWorldResult.class)
+                            .bodyToMono(Result.class)
                     .block()
             );
         }

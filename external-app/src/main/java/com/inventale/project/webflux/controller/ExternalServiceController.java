@@ -1,6 +1,6 @@
 package com.inventale.project.webflux.controller;
 
-import com.inventale.project.model.HelloWorldResult;
+import com.inventale.project.model.Result;
 import com.inventale.project.webflux.services.ExternalService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +20,8 @@ public class ExternalServiceController {
         this.externalService = externalService;
     }
 
-    @RequestMapping(value = "/hello", method = { RequestMethod.GET })
-    public HelloWorldResult helloExternal() {
-        return externalService.getHelloWorldBlocking();
+    @RequestMapping(value = "/answer", method = { RequestMethod.GET })
+    public Result getAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything() {
+        return externalService.getAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything();
     }
 }

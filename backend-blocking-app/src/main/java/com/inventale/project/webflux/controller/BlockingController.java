@@ -1,6 +1,6 @@
 package com.inventale.project.webflux.controller;
 
-import com.inventale.project.model.HelloWorldResult;
+import com.inventale.project.model.Result;
 import com.inventale.project.webflux.services.BlockingHttpClientService;
 import io.micrometer.core.annotation.Timed;
 import lombok.extern.slf4j.Slf4j;
@@ -22,10 +22,10 @@ public class BlockingController {
         this.blockingHttpClientService = blockingHttpClientService;
     }
 
-    @RequestMapping(value = "/hello-blocking", method = { RequestMethod.GET })
-    public HelloWorldResult helloBlocking() {
+    @RequestMapping(value = "/answer-blocking", method = { RequestMethod.GET })
+    public Result answerBlocking() {
         log.info("BlockingController, the thread is {}", Thread.currentThread().getName());
-        HelloWorldResult result = blockingHttpClientService.getHelloWorld();
+        Result result = blockingHttpClientService.getAnswer();
         log.info("BlockingController, result is {}", result);
         return result;
     }
