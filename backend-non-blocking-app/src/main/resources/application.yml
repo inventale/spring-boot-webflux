@@ -1,0 +1,9 @@
+server:
+  port: 8092
+
+backend:
+  retry-number: 2
+  request-timeout-seconds: 100
+  service-url: "http://localhost:8090/hello"
+  non-blocking-service-url: "http://localhost:${server.port}/hello-non-blocking"
+  number-of-calls-on-startup: 20

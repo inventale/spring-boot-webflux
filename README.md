@@ -26,10 +26,10 @@ In this project you can find two endpoints:
 Pay attention to result types of `HelloWorldWebfluxController`: they return reactive types `Mono` and `Flux`.
 You can read about reactive types here: https://spring.io/blog/2016/04/19/understanding-reactive-types
 
-Please find an example of usage of non-blocking HTTP client in `com.inventale.project.webflux.services.HelloWorldWebfluxHttpService.getHelloWorld`.
+Please find an example of usage of non-blocking HTTP client in `com.inventale.project.webflux.services.NonBlockingHttpClientService.getHelloWorld`.
 
 As was described above, you should avoid blocking calls like `Thread.sleep()` whenever you can.
-If you can rewrite your code there are ways to use blocking API, see `com.inventale.project.webflux.services.HelloWorldWebfluxService.getHelloWorld` 
+If you can rewrite your code there are ways to use blocking API, see `com.inventale.project.webflux.services.ExternalService.getHelloWorld` 
 for example.
 
 

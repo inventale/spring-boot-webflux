@@ -1,0 +1,7 @@
+server:
+  port: 8091
+
+backend:
+  service-url: "http://localhost:8090/hello"
+  blocking-service-url: "http://localhost:${server.port}/hello-blocking"
+  number-of-calls-on-startup: 20

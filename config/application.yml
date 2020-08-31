@@ -1,0 +1,6 @@
+logging:
+  level:
+    ROOT: INFO
+    com.inventale: DEBUG
+
+

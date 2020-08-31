@@ -12,5 +12,8 @@ gradleEnterprise {
 }
 
 include(
-        "backend-webflux-app"
+        "external-app",
+        "backend-non-blocking-app",
+        "backend-blocking-app",
+        "common"
 )

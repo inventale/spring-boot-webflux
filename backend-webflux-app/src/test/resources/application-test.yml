@@ -1,4 +1,0 @@
-#Metrics related configurations
-backend:
-  hello-world-target: "Test"
-

@@ -23,6 +23,8 @@ object Plugins {
 object Libs {
     const val springBootStarterActuator = "org.springframework.boot:spring-boot-starter-actuator:${Versions.springBoot}"
     const val springBootStarterWebflux = "org.springframework.boot:spring-boot-starter-webflux:${Versions.springBoot}"
+    const val springBootStarterWeb = "org.springframework.boot:spring-boot-starter-web:${Versions.springBoot}"
+    const val springBootStarterAop = "org.springframework.boot:spring-boot-starter-aop:${Versions.springBoot}"
     const val springBootStarterTest = "org.springframework.boot:spring-boot-starter-test:${Versions.springBoot}"
     const val lombok = "org.projectlombok:lombok:${Versions.lombok}"
     const val trove = "net.sf.trove4j:trove4j:${Versions.trove}"
